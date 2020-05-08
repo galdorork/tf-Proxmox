@@ -1,19 +1,8 @@
-provider "proxmox" { 
-  virtual_environment {    
-    endpoint = "${var.virtual_environment_endpoint}"
-    username = "${var.virtual_environment_username}"
-    password = "${var.virtual_environment_password}"
-    insecure = true  
-  }
-}
-variable "pm_api_url" {
-  default = "https://"$PROXMOXSERVERIP":8006/api2/json"
-}
-variable "pm_user" {
-default = "root@pam"
-}
-variable "pm_password" {
-default = "$SUPERSECRETPASSWORD"
+provider "proxmox" {
+    pm_api_url = "https://$PROXMOXSERVERIP:8006/api2/json"
+    pm_user = "root@pam"
+    pm_password = "$SUPERSECRETPASSWORD"
+    pm_tls_insecure = "true"
 }
 
 resource "proxmox_vm_qemu" "proxmox_vm" {
