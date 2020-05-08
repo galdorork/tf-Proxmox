@@ -21,7 +21,7 @@ disk {
     id              = 0
     size            = 20
     type            = "scsi"
-    storage         = "data2"
+    storage         = "$LVMSTORAGENAME"
     storage_type    = "lvm"
     iothread        = true
   }
