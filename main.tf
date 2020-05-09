@@ -1,3 +1,5 @@
+# Change $PROXMOXSERVERIP to one of your Proxmox Node's IPs or FQDN.
+# Change $SUPERSECRETPASSWORD to the root password of the node.
 provider "proxmox" {
     pm_api_url = "https://$PROXMOXSERVERIP:8006/api2/json"
     pm_user = "root@pam"
@@ -5,6 +7,8 @@ provider "proxmox" {
     pm_tls_insecure = "true"
 }
 
+# Change $NODETOBEDEPLOYED to the nmode where you want the VMs to be created at.
+# Change $LVMSTORAGENAME to the storage that the VM's disk is going to be created at.
 resource "proxmox_vm_qemu" "proxmox_vm" {
   count             = 1
   name              = "tf-vm-${count.index}"
@@ -35,7 +39,7 @@ lifecycle {
       network,
     ]
   }
-# Cloud Init Settings
+# Cloud Init Settings (Change the IP range and the GW to suit your needs)
   ipconfig0 = "ip=10.10.10.15${count.index + 1}/24,gw=10.10.10.1"
 sshkeys = <<EOF
   ${var.ssh_key}
