@@ -9,11 +9,12 @@ Upgraded to wotk with Terraform 1.0.
 
 
 Make sure you set up the variables needed to run the .tf:
-		- ${PROXMOX_URL}
-		- ${PROXMOXSUPERSECRETPASSWORD}
-		- ${NODETOBEDEPLOYED}
-		- ${SSHPERSONALPUBLICKEY}
-		- IP Range
+
+	- ${PROXMOX_URL}
+	- ${PROXMOXSUPERSECRETPASSWORD}
+	- ${NODETOBEDEPLOYED}
+	- ${SSHPERSONALPUBLICKEY}
+	- IP Range
 
 Terraform 1.0 here: https://www.terraform.io/downloads.html
 
