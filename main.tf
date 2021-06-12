@@ -18,7 +18,7 @@ provider "proxmox" {
     pm_tls_insecure = "true"
 }
 
-# Change $NODETOBEDEPLOYED to the nmode where you want the VMs to be created at.
+# Change $NODETOBEDEPLOYED to the node where you want the VMs to be created at.
 resource "proxmox_vm_qemu" "proxmox_vm" {
   count             = 1
   name              = "tf-vm-${count.index}"
