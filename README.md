@@ -1,6 +1,6 @@
 ## Terraform example file for Proxmox Provisioner
 
-Upgraded to wotk with Terraform 1.0.
+Upgraded to work with Terraform 1.0.
 
 	- Added required providers block to work with a specific telmate version
 	- No need to download and compile the module now, it just downloads it from the Terraform Registry; more info here: https://registry.terraform.io/providers/Telmate/proxmox/latest/docs 
