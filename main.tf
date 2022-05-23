@@ -5,7 +5,7 @@ terraform {
   required_providers {
     proxmox = {
       source = "Telmate/proxmox"
-      version = "2.7.1"
+      version = "2.9.10"
     }
   }
 }
@@ -25,7 +25,7 @@ resource "proxmox_vm_qemu" "proxmox_vm" {
   target_node       = "${NODETOBEDEPLOYED}"
   clone             = "debian-10"
   os_type           = "cloud-init"
-  cores             = 4
+  cores             = 1
   sockets           = "1"
   cpu               = "host"
   memory            = 2048
